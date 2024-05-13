@@ -10,12 +10,12 @@ class Minesweeper:
         self.width = width
         self.height = height
         self.mines = set(random.sample(range(width * height), mines))
-        self.field = [[' 'or _ in range(width)] for _ in range(height)]
+        self.field = [[' ' for _ in range(width)] for _ in range(height)]
         self.revealed = [[False for _ in range(width)] for _ in range(height)]
 
     def print_board(self, reveal=False):
         clear_screen()
-        print('  ' '.join(str(i) for i in range(self.width)))
+        print('  ' + ' '.join(str(i) for i in range(self.width)))
         for y in range(self.height):
             print(y, end=' ')
             for x in range(self.width):
@@ -24,7 +24,7 @@ class Minesweeper:
                         print('*', end=' ')
                     else:
                         count = self.count_mines_nearby(x, y)
-                        print(count if count > 0 else ', end=' ')
+                        print(count if count > 0 else ' ', end=' ')
                 else:
                     print('.', end=' ')
             print()
@@ -51,16 +51,21 @@ class Minesweeper:
                         self.reveal(nx, ny)
         return True
 
-    def is_game_won(self):
+    def check_win(self):
         for y in range(self.height):
             for x in range(self.width):
-                if (y * self.width + x) not in self.mines and not self.revealed[y][x]:
+                if not self.revealed[y][x] and (y * self.width + x) not in self.mines:
                     return False
         return True
 
     def play(self):
         while True:
             self.print_board()
+            if self.check_win():
+                self.print_board(reveal=True)
+                print("Congratulations! You've won the game.")
+                break
+
             try:
                 x = int(input("Enter x coordinate: "))
                 y = int(input("Enter y coordinate: "))
@@ -68,10 +73,8 @@ class Minesweeper:
                     self.print_board(reveal=True)
                     print("Game Over! You hit a mine.")
                     break
-                elif self.is_game_won():
-                    self.print_board(reveal=True)
-                    print("Congratulations! You won the game.")
-                    break
+
+                
             except ValueError:
                 print("Invalid input. Please enter numbers only.")
 
