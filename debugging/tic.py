@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def print_board(board):
     for row in board:
         print(" | ".join(row))
@@ -27,23 +26,18 @@ def tic_tac_toe():
     player = "X"
     while not check_winner(board):
         print_board(board)
-        try:
-            row = int(input("Enter row (0, 1, or 2) for player " + player + ": "))
-            col = int(input("Enter column (0, 1, or 2) for player " + player + ": "))
-            if 0 <= row < 3 and 0 <= col < 3 and board[row][col] == " ":
-                board[row][col] = player
-                player = "O" if player == "X" else "X"
+        row = int(input("Enter row (0, 1, or 2) for player " + player + ": "))
+        col = int(input("Enter column (0, 1, or 2) for player " + player + ": "))
+        if board[row][col] == " ":
+            board[row][col] = player
+            if player == "X":
+                player = "O"
             else:
-                print("Invalid move! Try again.")
-        except ValueError:
-            print("Invalid input! Please enter valid row and column numbers.")
+                player = "X"
+        else:
+            print("That spot is already taken! Try again.")
 
     print_board(board)
-    if check_winner(board):
-        print("Player " + player + " wins!")
-    else:
-        print("It's a tie!")
+    print("Player " + player + " wins!")
 
-if __name__ == "__main__":
-    tic_tac_toe()
-
+tic_tac_toe()
