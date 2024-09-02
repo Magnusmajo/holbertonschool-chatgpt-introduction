@@ -37,3 +37,26 @@ Objective: Use ChatGPT to identify and correct errors in code samples. (There ma
 
 Game Overview: Players alternate placing “X” or “O” on a 3x3 board, aiming to get three in a row horizontally, vertically, or diagonally to win.
 Dowload the code here: https://github.com/hs-hq-service/3156/blob/eefc03645896132c4f83c59e8a182daeb07dde75/tic.py
+
+
+=======>>>
+####  Some additional info:
+###### Debugging
+In programming refers to the process of identifying, analyzing, and fixing errors or “bugs” in the source code of a program. These errors can cause unexpected behavior, execution failures, or incorrect results in the application.
+
+The main goal of debugging is to improve the functionality, suitability, and efficiency of the software. Developers use various tools to inspect and modify the code, set breakpoints, and monitor the state of variables during the program’s execution.
+
+###### Automation
+In programming refers to the use of technology to perform tasks with minimal human intervention. This can be applied in various sectors where repetitive tasks are common, such as manufacturing, robotics, automotive industries, and IT systems12.
+
+In the context of programming, automation often involves writing scripts or using tools to automate repetitive tasks like testing, deployment, and data processing. This helps improve efficiency, reduce errors, and free up human resources for more complex tasks12.
+
+<=============
+
+
+This is an Holberton School Project
+Author: Alexis Rodriguez Rodriguez
+Location: Montevideo. Uruguay
+September 2024
+
+@ Alexis-Holberton School --All right reserved---
