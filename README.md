@@ -59,4 +59,4 @@ Author: Alexis Rodriguez Rodriguez
 Location: Montevideo. Uruguay
 September 2024
 
-@ Alexis-Holberton School --All right reserved---
+@ 2024 Alexis-Holberton School --All right reserved---
